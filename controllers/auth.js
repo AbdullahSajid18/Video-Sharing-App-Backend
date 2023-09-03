@@ -4,6 +4,7 @@ import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import { createError } from "../error.js";
 
+// signup
 
 export const signup = async (req,res, next)=> {
    try {
@@ -18,7 +19,7 @@ export const signup = async (req,res, next)=> {
    }
 }
 
-
+// signin
 export const signin = async (req, res, next) => {
    try {
      const user = await User.findOne({ name: req.body.name });

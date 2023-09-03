@@ -1,6 +1,8 @@
 import { createError } from "../error.js";
 import User from "../models/User.js";
 import Video from '../models/Video.js'
+
+// add video
 export const addVideo = async(req, res, next) => {
    const newVideo = new Video({userId:req.user.id, ...req.body})
    try {

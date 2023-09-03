@@ -2,7 +2,7 @@ import { createError } from "../error.js";
 import Comment from "../models/Comments.js"
 import Video from "../models/Video.js"
 
-
+// add comment
 export const addComment = async (req, res, next) => {
     const newComment = new Comment ({...req.body, userId:req.user.id})
     try {
@@ -14,6 +14,7 @@ export const addComment = async (req, res, next) => {
     }
 }
 
+// delete comment
 export const deleteComment = async (req, res, next) => {
     try {
         const comment = await Comment.findById(rs.params.id)
@@ -29,7 +30,7 @@ export const deleteComment = async (req, res, next) => {
     }
 }
 
-
+// get comments
 export const getComments = async (req, res, next) => {
     try {
         const comments = await Comment.find({videoId:req.params.videoId});

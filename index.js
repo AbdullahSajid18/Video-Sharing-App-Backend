@@ -12,7 +12,6 @@ const app = express();
 const PORT = 8000;
 dotenv.config();
 
-// middleware
 
 // MIDDLEWARES
 app.use(express.json());
